@@ -346,6 +346,42 @@ rules: {
 
 Create new GitHub repository
 
+```
+$ git clone git@github.com:lockex1987/simple-ecommerce.git
+Cloning into 'simple-ecommerce'...
+warning: You appear to have cloned an empty repository.
+
+$ cd simple-ecommerce/
+
+# Add README.md file
+
+$ git add .
+huyennv9@VTCC-huyennv9:~/projects/simple-ecommerce$ git commit -m "First commit"
+[master (root-commit) 83ca4a1] First commit
+ 1 file changed, 364 insertions(+)
+ create mode 100644 README.md
+
+~/projects/simple-ecommerce$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 2.62 KiB | 2.62 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:lockex1987/simple-ecommerce.git
+ * [new branch]      master -> master
+
+~/projects/simple-ecommerce$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+~/projects/simple-ecommerce$ git branch
+* master
+
+
+```
+
 
 
 
