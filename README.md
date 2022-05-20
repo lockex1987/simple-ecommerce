@@ -402,9 +402,31 @@ git checkout master
 
 git merge step_1_get_started
 
-
+git push
 
 ### SPA
+
+git branch step_2_spa
+
+git checkout step_2_spa
+
+git push -u origin step_2_spa
+
+Add, edit files
+
+git add .
+
+git commit
+
+git push
+
+git checkout master
+
+git merge step_2_spa
+
+git push
+
+
 
 Vue Router
 
