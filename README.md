@@ -384,6 +384,24 @@ nothing to commit, working tree clean
 
 
 
+Create new branch
+
+git branch step_1_get_started
+
+git checkout step_1_get_started
+
+Thêm file
+
+git push -u origin step_1_get_started
+
+Lệnh trên thực hiện một lần, những lần sau chỉ cần git push bình thường
+
+
+
+git checkout master
+
+git merge step_1_get_started
+
 
 
 ### SPA
