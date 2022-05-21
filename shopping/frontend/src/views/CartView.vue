@@ -1,6 +1,6 @@
 <template>
   <main>
-    Home
+    Cart
   </main>
 </template>
 

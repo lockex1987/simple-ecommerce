@@ -1,6 +1,6 @@
 <template>
   <main>
-    Home
+    Checkout
   </main>
 </template>
 
