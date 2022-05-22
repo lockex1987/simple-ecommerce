@@ -1,15 +1,24 @@
 <template>
-  <div class="card md:card-side bordered animate-pulse">
-    <div class="p-8 md:w-64">
-      <div class="bg-gray-500 rounded h-48"></div>
+  <div class="row">
+    <div class="col-md-6">
+      <div
+        class="bg-light"
+        style="height: 25rem;"
+      >
+      </div>
     </div>
 
-    <div class="card-body">
-      <div class="space-y-2">
-        <div class="h-4 bg-gray-500 rounded"></div>
-        <div class="h-4 bg-gray-500 rounded"></div>
-        <div class="h-4 bg-gray-500 rounded w-5/6"></div>
-        <div class="h-4 bg-gray-500 rounded w-1/4"></div>
+    <div class="col-md-6">
+      <div class="placeholder-glow">
+        <div class="mb-3 placeholder col-8"></div>
+
+        <div class="mb-3 placeholder col-12"></div>
+
+        <div class="mb-3 placeholder col-2"></div>
+      </div>
+
+      <div>
+        <span class="btn btn-light placeholder col-3"></span>
       </div>
     </div>
   </div>

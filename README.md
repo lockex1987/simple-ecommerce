@@ -596,7 +596,7 @@ Skeleton
 
 Home.vue: Product list
 
-Product.vue
+Product.vue: Product detail
 
 Cart.vue
 

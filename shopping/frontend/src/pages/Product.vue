@@ -4,64 +4,67 @@
       Product detail
     </h4>
 
-    <div class="p-4 max-w-4xl mx-auto">
+    <div>
       <div v-if="!productStore.loaded">
         <CartCardSkeleton />
       </div>
-      <div
-        class="card lg:card-side bordered"
-        v-else-if="product"
-      >
-        <figure class="px-10 pt-10">
-          <img
-            :src="product.image"
-            alt="Card Image"
-            class="object-contain w-full h-64"
-          />
-        </figure>
-        <div class="card-body">
-          <h2
-            class="card-title"
-            v-text="product.title"
-          ></h2>
-          <p v-text="product.description"></p>
-          <p class="mt-4 text-lg">{{ toCurrency(product.price) }}</p>
-          <div class="card-actions">
-            <button
-              class="btn btn-primary"
-              @click="cartStore.add(product.id)"
-            >
-              Add to Cart
-            </button>
+
+      <div v-else-if="product">
+        <div class="row">
+          <div class="col-md-6">
+            <img
+              :src="product.image"
+              alt="Product image"
+              class="w-100"
+              style="height: 25rem; object-fit: contain;"
+            />
+          </div>
+
+          <div class="col-md-6">
+            <div class="fs-3 mb-3">
+              {{ product.title }}
+            </div>
+
+            <div class="mb-3 text-muted">
+              {{ product.description }}
+            </div>
+
+            <div class="mb-3 fw-bolder">
+              {{ toCurrency(product.price) }}
+            </div>
+
+            <div>
+              <button
+                class="btn btn-light"
+                @click="cartStore.add(product.id)"
+              >
+                Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       </div>
+
       <div v-else>
-        <h1 class="text-xl text-error">
+        <div class="fs-3 text-danger">
           No product found with id {{ route.params.productId }}
-        </h1>
+        </div>
       </div>
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
+import CartCardSkeleton from '@/components/CartCardSkeleton.vue'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-
-import { useCartStore } from '../stores/cart'
-import { useProductStore } from '../stores/products'
-import type { Product } from '../stores/products'
-import { toCurrency } from '../shared/utils'
-
-import CartCardSkeleton from '@/components/CartCardSkeleton.vue'
+import { useCartStore } from '@/stores/cart'
+import { useProductStore } from '@/stores/products'
+import type { Product } from '@/stores/products'
+import { toCurrency } from '@/shared/utils'
 
 const cartStore = useCartStore()
 const productStore = useProductStore()
-
 const route = useRoute()
-
-const product = computed<Product>(
-  () => productStore.items[route.params.productId as string],
-)
+const product = computed<Product>(() => productStore.items[route.params.productId as string])
 </script>
