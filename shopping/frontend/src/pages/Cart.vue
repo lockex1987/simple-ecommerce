@@ -6,7 +6,7 @@
 
     <div v-if="productStore.loaded">
       <div v-if="!formattedCart.length">
-        <div class="fs-3">Cart is empty</div>
+        <div class="fs-3 text-danger">Cart is empty</div>
       </div>
 
       <div v-else>

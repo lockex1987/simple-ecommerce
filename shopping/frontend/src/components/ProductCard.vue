@@ -1,6 +1,6 @@
 <template>
   <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
-    <div class="card">
+    <div class="card h-100">
       <img
         :src="product.image"
         alt="Product image"
@@ -8,7 +8,7 @@
         style="height: 12rem; object-fit: contain;"
       />
 
-      <div class="card-body">
+      <div class="card-body d-flex flex-column">
         <div class="card-title">
           <RouterLink
             class="text-decoration-none text-body"
@@ -18,7 +18,7 @@
           </RouterLink>
         </div>
 
-        <div class="card-text mb-3">
+        <div class="card-text mb-3 mt-auto">
           {{ toCurrency(product.price) }}
         </div>
 
