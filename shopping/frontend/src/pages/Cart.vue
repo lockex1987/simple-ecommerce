@@ -4,52 +4,46 @@
       Cart
     </h4>
 
-    <div class="p-4 max-w-4xl mx-auto">
-      <div
-        v-if="!productStore.loaded"
-        class="space-y-4"
-      >
-        <CartCardSkeleton
-          v-for="n in 15"
-          :key="n"
-        />
+    <div v-if="productStore.loaded">
+      <div v-if="!formattedCart.length">
+        <div class="fs-3">Cart is empty</div>
       </div>
-      <div v-else-if="!formattedCart.length">
-        <h1 class="text-xl">Cart is empty.</h1>
-      </div>
-      <div
-        v-else
-        class="space-y-4"
-      >
+
+      <div v-else>
         <CartCard
-          v-for="(cartProduct, index) in formattedCart"
-          :key="index"
+          v-for="(cartProduct, idx) in formattedCart"
+          :key="idx"
           :cartProduct="cartProduct"
+          :class="{ 'border-top': idx > 0 }"
         />
-        <div class="text-right text-2xl md:text-4xl">
-          Total: {{ toCurrency(cartStore.total) }}
+
+        <div class="text-end fs-4 mb-4">
+          Total:
+          {{ toCurrency(cartStore.total) }}
+        </div>
+
+        <div class="text-center">
+          <RouterLink
+            to="/checkout"
+            class="text-decoration-none fs-3"
+          >
+            Checkout
+          </RouterLink>
         </div>
       </div>
-    </div>
-
-    <div>
-      <RouterLink to="/checkout">Checkout</RouterLink>
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-
-import { computed } from 'vue'
 import CartCard from '../components/CartCard.vue'
-import CartCardSkeleton from '../components/CartCardSkeleton.vue'
-import { toCurrency } from '../shared/utils'
-import { useCartStore } from '../stores/cart'
-import { useProductStore } from '../stores/products'
+import { computed } from 'vue'
+import { toCurrency } from '@/shared/utils'
+import { useCartStore } from '@/stores/cart'
+import { useProductStore } from '@/stores/products'
 
 const cartStore = useCartStore()
 const productStore = useProductStore()
-
 const formattedCart = computed(() => cartStore.formattedCart)
 </script>

@@ -1,27 +1,19 @@
 <template>
-
-  <div class="dropdown dropdown-end">
-    <form class="d-flex">
-      <input
-        type="text"
-        placeholder="Search..."
-        class="form-control"
-        :disabled="!productStore.loaded"
-        v-model="input"
-      />
-    </form>
+  <div
+    class="dropdown"
+    style="width: 24rem"
+  >
+    <input
+      type="text"
+      placeholder="Search..."
+      class="form-control"
+      :disabled="!productStore.loaded"
+      v-model.trim="input"
+      data-bs-toggle="dropdown"
+    />
 
     <ul
-      class="
-        shadow
-        menu
-        dropdown-content
-        bg-base-100
-        rounded-box
-        w-64
-        text-base-content
-        overflow-y-scroll
-      "
+      class="dropdown-menu overflow-auto w-100"
       style="max-height: 50vh"
     >
       <li
@@ -31,8 +23,10 @@
         <a
           href="#"
           @click.prevent="navigate(product.id)"
-          v-text="product.title"
-        ></a>
+          class="dropdown-item text-truncate"
+        >
+          {{ product.title }}
+        </a>
       </li>
     </ul>
   </div>
@@ -41,18 +35,19 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { useProductStore } from '../stores/products'
+import { useProductStore } from '@/stores/products'
 
 const productStore = useProductStore()
 const router = useRouter()
 const input = ref('')
 
 const searchResults = computed(() => {
-  if (!input.value || input.value.length < 2) return []
+  if (!input.value || input.value.length < 2) {
+    return []
+  }
 
-  return productStore.list.filter(item => {
-    return item.title.toLowerCase().includes(input.value.toLowerCase())
-  })
+  const temp = input.value.toLowerCase()
+  return productStore.list.filter(product => product.title.toLowerCase().includes(temp))
 })
 
 const navigate = (id: number) => {

@@ -598,7 +598,11 @@ Home.vue: Product list
 
 Product.vue: Product detail
 
-Cart.vue
+Cart.vue: Chosen product list
+
+Search.vue: Search product
+
+
 
 
 

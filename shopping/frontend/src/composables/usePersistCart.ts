@@ -7,8 +7,8 @@ export const usePersistCart = () => {
   const cartStore = useCartStore()
 
   const unsub = cartStore.$subscribe((mutation, state) => {
-    console.log(state)
-    console.log(cartStore.contents)
+    // console.log(state)
+    // console.log(cartStore.contents)
     localStorage.setItem(CART_STORAGE, JSON.stringify(cartStore.contents))
   })
 
