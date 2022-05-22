@@ -1,20 +1,39 @@
 <template>
-  <header>
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/product">Product</RouterLink>
-      <RouterLink to="/cart">Cart</RouterLink>
-      <RouterLink to="/checkout">Checkout</RouterLink>
-    </nav>
-  </header>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <RouterLink
+        to="/"
+        class="navbar-brand"
+      >
+        SeC
+      </RouterLink>
 
-  <RouterView />
+      <RouterLink
+        to="/cart"
+        class=""
+      >
+        <i class="bi bi-cart fs-5"></i>
+        <span class="px-2 bg-primary text-white badge ms-1">
+          1
+        </span>
+      </RouterLink>
+    </div>
+  </nav>
+
+  <div class="container py-3">
+    <RouterView />
+  </div>
 </template>
 
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 </script>
 
-<style>
+<style lang="scss">
 /* import '@/assets/base.css'; */
+.nav {
+  a {
+    color: red;
+  }
+}
 </style>

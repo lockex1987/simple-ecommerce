@@ -2,6 +2,8 @@
 
 ### Introduction
 
+Clone https://kingfoodmart.com/collections/banh-keo-snacks
+
 #### Features
 
 - Admin
@@ -500,7 +502,102 @@ views
 
 
 
-### Bootstrap, SCSS
+### Vite, Bootstrap, SCSS
+
+To suport `<style lang="scss"></style>`,  install preprocessor dependency "sass"
+
+npm install sass --save-dev
+
+npm install bootstrap
+
+App.vue, or main.ts
+
+
+
+```vue
+<style lang="scss">
+/* import '@/assets/base.css'; */
+.nav {
+  a {
+    color: red;
+  }
+}
+</style>
+```
+
+
+
+Output result inline in `head` tag:
+
+```html
+<style type="text/css">/* import '@/assets/base.css'; */
+.nav a {
+  color: red;
+}</style>
+```
+
+No, first HTML code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="module" src="/@vite/client"></script>
+
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple eCommerce</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script type="module" src="/src/main.ts?t=1653179127772"></script>
+</body>
+</html>
+```
+
+CSS is processed by JS.
+
+scss/style.scss
+
+
+
+
+
+### Axios, Fake API, Pinia
+
+
+
+### Facebook Messenger
+
+```javascript
+var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "2307562982605619");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml            : true,
+        version          : 'v12.0'
+      });
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+```
+
+
+
+
+
+
 
 
 
