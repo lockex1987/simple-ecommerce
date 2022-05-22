@@ -568,6 +568,22 @@ scss/style.scss
 
 ### Axios, Fake API, Pinia
 
+#### Axios
+
+npm instal axios
+
+#### Pinia Store
+
+stores/cart.ts
+
+stores/products.ts
+
+### Fake Store API
+
+[Fake Store API](https://fakestoreapi.com/docs)
+
+
+
 
 
 ### Facebook Messenger

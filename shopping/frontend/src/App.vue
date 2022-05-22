@@ -1,24 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <RouterLink
-        to="/"
-        class="navbar-brand"
-      >
-        SeC
-      </RouterLink>
-
-      <RouterLink
-        to="/cart"
-        class=""
-      >
-        <i class="bi bi-cart fs-5"></i>
-        <span class="px-2 bg-primary text-white badge ms-1">
-          1
-        </span>
-      </RouterLink>
-    </div>
-  </nav>
+  <Nav />
 
   <div class="container py-3">
     <RouterView />
@@ -26,14 +7,12 @@
 </template>
 
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-</script>
+import { useProductStore } from './stores/products'
+import { usePersistCart } from './composables/usePersistCart'
+import Nav from './components/Nav.vue'
+import { RouterView } from 'vue-router'
 
-<style lang="scss">
-/* import '@/assets/base.css'; */
-.nav {
-  a {
-    color: red;
-  }
-}
-</style>
+const productStore = useProductStore()
+productStore.fetchAll()
+usePersistCart()
+</script>
