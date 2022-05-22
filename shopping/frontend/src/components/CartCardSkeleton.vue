@@ -3,6 +3,7 @@
     <div class="p-8 md:w-64">
       <div class="bg-gray-500 rounded h-48"></div>
     </div>
+
     <div class="card-body">
       <div class="space-y-2">
         <div class="h-4 bg-gray-500 rounded"></div>

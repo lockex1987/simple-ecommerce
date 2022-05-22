@@ -1,38 +1,45 @@
 <template>
-  <div class="card bordered">
-    <figure class="px-8 pt-10">
+  <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+    <div class="card">
       <img
         :src="product.image"
-        alt="Card Image"
-        class="object-contain w-full h-64"
+        alt="Product image"
+        class="card-img-top mt-3"
+        style="height: 12rem; object-fit: contain;"
       />
-    </figure>
-    <div class="card-body">
-      <h2 class="card-title">
-        <router-link
-          class="link link-hover"
-          :to="`/product/${product.id}`"
-        >{{
-            product.title
-        }}</router-link>
-      </h2>
-      <p>{{ toCurrency(product.price) }}</p>
-      <div class="justify-end card-actions">
-        <button
-          class="btn btn-primary"
-          @click="cartStore.add(product.id)"
-        >
-          Add to Cart
-        </button>
+
+      <div class="card-body">
+        <div class="card-title">
+          <RouterLink
+            class="text-decoration-none text-body"
+            :to="`/product/${product.id}`"
+          >
+            {{ product.title }}
+          </RouterLink>
+        </div>
+
+        <div class="card-text mb-3">
+          {{ toCurrency(product.price) }}
+        </div>
+
+        <div>
+          <button
+            class="btn btn-light w-100"
+            @click="cartStore.add(product.id)"
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useCartStore } from '../stores/cart'
-import type { Product } from '../stores/products'
-import { toCurrency } from '../shared/utils'
+import { RouterLink } from 'vue-router'
+import { useCartStore } from '@/stores/cart'
+import type { Product } from '@/stores/products'
+import { toCurrency } from '@/shared/utils'
 
 const cartStore = useCartStore()
 

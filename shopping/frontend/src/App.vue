@@ -7,12 +7,12 @@
 </template>
 
 <script setup lang="ts">
-import { useProductStore } from './stores/products'
-import { usePersistCart } from './composables/usePersistCart'
-import Nav from './components/Nav.vue'
+import Nav from '@/components/Nav.vue'
 import { RouterView } from 'vue-router'
+import { useProductStore } from '@/stores/products'
+import { usePersistCart } from '@/composables/usePersistCart'
 
 const productStore = useProductStore()
-productStore.fetchAll()
+productStore.getAll()
 usePersistCart()
 </script>

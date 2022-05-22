@@ -26,7 +26,7 @@ export const useProductStore = defineStore({
   }),
 
   getters: {
-    list: (state): Product[] => state.ids.map(i => state.items[i]),
+    list: (state): Product[] => state.ids.map(id => state.items[id]),
 
     loaded(): boolean {
       return this.ids.length > 0
@@ -34,7 +34,7 @@ export const useProductStore = defineStore({
   },
 
   actions: {
-    async fetchAll() {
+    async getAll() {
       if (this.loaded) {
         return
       }

@@ -16,7 +16,7 @@
       >
         <i class="bi bi-cart fs-5"></i>
         <span class="px-2 bg-primary text-white badge ms-1">
-          {{ count }}
+          {{ cartStore.count }}
         </span>
       </RouterLink>
     </div>
@@ -25,11 +25,10 @@
 
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import { computed } from 'vue'
-import { useCartStore } from '@/stores/cart'
 import Search from './Search.vue'
+import { useCartStore } from '@/stores/cart'
+// import { computed } from 'vue'
 
 const cartStore = useCartStore()
-
-const count = computed(() => cartStore.count)
+// const count = computed(() => cartStore.count)
 </script>

@@ -43,7 +43,9 @@ export const useCartStore = defineStore({
     formattedCart(): CartPreview[] {
       const products = useProductStore()
 
-      if (!products.loaded) return []
+      if (!products.loaded) {
+        return []
+      }
 
       return Object.keys(this.contents).map(productId => {
         const purchase = this.contents[productId]

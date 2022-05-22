@@ -28,5 +28,6 @@ module.exports = {
     'quote-props': ['error', 'consistent-as-needed'],
     'arrow-parens': ['error', 'as-needed'],
     'object-curly-spacing': ['error','always'],
+    'vue/multi-word-component-names': 'off',
   },
 }

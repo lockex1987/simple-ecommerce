@@ -2,7 +2,9 @@
 
 ### Introduction
 
-Clone https://kingfoodmart.com/collections/banh-keo-snacks
+Clone:
+
+[Siêu thị Kingfoodmart](https://kingfoodmart.com/)
 
 #### Features
 
@@ -572,15 +574,31 @@ scss/style.scss
 
 npm instal axios
 
+#### Fake Store API
+
+[Fake Store API](https://fakestoreapi.com/docs)
+
+
+
 #### Pinia Store
 
 stores/cart.ts
 
 stores/products.ts
 
-### Fake Store API
+$subscribe
 
-[Fake Store API](https://fakestoreapi.com/docs)
+
+
+#### Format, Business
+
+Skeleton
+
+Home.vue: Product list
+
+Product.vue
+
+Cart.vue
 
 
 
