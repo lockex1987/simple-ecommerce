@@ -34,7 +34,7 @@ Vue 3, Vue Router, Pinia, Vite, TypeScript, ESLint
 
 
 
-Nuxt, Express (Shopping)
+Nuxt 3, Express (Shopping)
 
 AdonisJS (Admin backend)
 
@@ -602,7 +602,9 @@ Cart.vue: Chosen product list
 
 Search.vue: Search product
 
+Category?
 
+IsInCart
 
 
 

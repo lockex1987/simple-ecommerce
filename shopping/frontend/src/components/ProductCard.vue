@@ -23,12 +23,7 @@
         </div>
 
         <div>
-          <button
-            class="btn btn-light w-100"
-            @click="cartStore.add(product.id)"
-          >
-            Add to Cart
-          </button>
+          <IsInCart :product="product" />
         </div>
       </div>
     </div>
@@ -37,13 +32,11 @@
 
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import { useCartStore } from '@/stores/cart'
+import IsInCart from './IsInCart.vue'
 import type { Product } from '@/stores/products'
 import { toCurrency } from '@/shared/utils'
 
-const cartStore = useCartStore()
-
 defineProps<{
-  product: Product;
+  product: Product
 }>()
 </script>

@@ -33,13 +33,8 @@
               {{ toCurrency(product.price) }}
             </div>
 
-            <div>
-              <button
-                class="btn btn-light"
-                @click="cartStore.add(product.id)"
-              >
-                Add to Cart
-              </button>
+            <div style="max-width: 12rem">
+              <IsInCart :product="product" />
             </div>
           </div>
         </div>
@@ -56,14 +51,13 @@
 
 <script setup lang="ts">
 import CartCardSkeleton from '@/components/CartCardSkeleton.vue'
+import IsInCart from '@/components/IsInCart.vue'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import { useCartStore } from '@/stores/cart'
 import { useProductStore } from '@/stores/products'
 import type { Product } from '@/stores/products'
 import { toCurrency } from '@/shared/utils'
 
-const cartStore = useCartStore()
 const productStore = useProductStore()
 const route = useRoute()
 const product = computed<Product>(() => productStore.items[route.params.productId as string])
