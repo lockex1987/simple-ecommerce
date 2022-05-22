@@ -62,31 +62,21 @@ Create new project, setup linter, formatter
 
 Step 2: SPA
 
-Dummy pages
+Dummy pages (Home, Product, Cart, Checkout)
+
+Step 3: SCSS, Bootstrap
+
+Step 4: Axios, Fake Store API, Pinia
+
+Step 5: Setup MariaDB database, seed by AdonisJS command
+
+Setup database with data of fake API
 
 
-
-
-
-
-
-SPA: 
-
-Fake API data
-
-Home
-
-Product
-
-Cart
-
-Checkout
 
 
 
 Step 2: SSR with Nuxt
-
-Step 3: Setup database with data of fake API
 
 Step 4:
 
@@ -607,6 +597,90 @@ Category?
 IsInCart (Check quantity in cart)
 
 Global mixin
+
+### Setup database, seed
+
+Setup MariaDB database, seed by AdonisJS command
+
+Setup database with data of fake API
+
+```sql
+create database ecommerce character set=utf8mb4 collate=utf8mb4_vietnamese_ci;
+
+CREATE TABLE `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `password` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci;
+
+CREATE TABLE `product` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(1000) NOT NULL,
+  `price` float,
+  `description` varchar(2000) NOT NULL,
+  `image` varchar(2000) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+```
+
+Create AdonisJS admin backend
+
+```
+$ mkdir admin
+lockex1987@cttd:~/projects/simple-ecommerce$ cd admin/
+lockex1987@cttd:~/projects/simple-ecommerce/admin$ npm init adonis-ts-app@latest backend
+Need to install the following packages:
+  create-adonis-ts-app@latest
+Ok to proceed? (y) y
+
+     _       _             _         _ ____  
+    / \   __| | ___  _ __ (_)___    | / ___| 
+   / _ \ / _` |/ _ \| '_ \| / __|_  | \___ \ 
+  / ___ \ (_| | (_) | | | | \__ \ |_| |___) |
+ /_/   \_\__,_|\___/|_| |_|_|___/\___/|____/ 
+                                             
+
+
+CUSTOMIZE PROJECT
+❯ Select the project structure · api
+❯ Enter the project name · backend
+❯ Setup eslint? (y/N) · true
+❯ Setup prettier? (y/N) · false
+
+RUNNING TASKS
+❯ Scaffold project 47 ms
+❯ Install dependencies 36 s
+❯ Configure installed packages 19 s
+
+[ success ]  Project created successfully
+
+╭─────────────────────────────────────────────────╮
+│    Run following commands to get started        │
+│─────────────────────────────────────────────────│
+│                                                 │
+│    ❯ cd backend                                 │
+│    ❯ node ace serve --watch                     │
+│                                                 │
+╰─────────────────────────────────────────────────╯
+
+$ node ace serve --watch
+[ info ]  building project...
+[ info ]  starting http server...
+[1653213755763] INFO (backend/61066 on cttd): started server on 0.0.0.0:3333
+[ info ]  watching file system for changes
+╭─────────────────────────────────────────────────╮
+│                                                 │
+│    Server address: http://127.0.0.1:3333        │
+│    Watching filesystem for changes: YES         │
+│                                                 │
+╰─────────────────────────────────────────────────╯
+
+```
+
+
+
+
 
 
 
