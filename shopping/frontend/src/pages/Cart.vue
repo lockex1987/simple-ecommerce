@@ -39,7 +39,6 @@
 import { RouterLink } from 'vue-router'
 import CartCard from '../components/CartCard.vue'
 import { computed } from 'vue'
-import { toCurrency } from '@/shared/utils'
 import { useCartStore } from '@/stores/cart'
 import { useProductStore } from '@/stores/products'
 

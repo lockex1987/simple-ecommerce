@@ -604,7 +604,9 @@ Search.vue: Search product
 
 Category?
 
-IsInCart
+IsInCart (Check quantity in cart)
+
+Global mixin
 
 
 
