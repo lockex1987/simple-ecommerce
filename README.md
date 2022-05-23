@@ -708,13 +708,11 @@ Check user_name, password
 
 Redis token
 
-
-
 AdonisJS Middleware
 
 Vue Router Middleware
 
-Rate Limit
+TODO: Rate Limit
 
 
 
