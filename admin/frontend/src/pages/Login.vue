@@ -108,7 +108,7 @@ const processLogin = async () => {
     setToken(data.token)
     authStore.setUser(data.user)
     router.push({ name: 'dashboard' })
-  } else {
+  } else if (data.code == 1) {
     errorMessage.value = data.message
   }
 }
