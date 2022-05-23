@@ -97,15 +97,18 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import { useRouter } from 'vue-router'
-// import { useAuthStore } from '@/stores/auth'
-// import { computed } from 'vue'
+import { useAuthStore } from '@/stores/auth'
 
-// const authStore = useAuthStore()
-// const user = computed(() => authStore.user)
+const authStore = useAuthStore()
 
 const router = useRouter()
 
 const processLogout = () => {
+  authStore.setUser({
+    id: null,
+    userName: '',
+  })
+
   router.push({ name: 'login' })
 }
 </script>

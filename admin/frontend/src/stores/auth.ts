@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 
 interface User {
-  id: number
+  id: number | null
   userName: string
 }
 
@@ -11,14 +11,15 @@ export const useAuthStore = defineStore({
 
   state: () => ({
     user: {
-      id: 1,
-      userName: 'lockex1987',
+      id: null,
+      userName: '',
     },
   }),
 
   actions: {
     setUser(user: User) {
       this.user = user
+      console.log(1)
     },
   },
 })
