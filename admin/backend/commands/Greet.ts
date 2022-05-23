@@ -30,7 +30,7 @@ export default class Greet extends BaseCommand {
 
   public async run() {
     // this.logger.info('Hello world!')
-    const { default: User } = await import('App/Models/User')
+    // const { default: User } = await import('App/Models/User')
 
     /*
     await User.create({
@@ -40,9 +40,11 @@ export default class Greet extends BaseCommand {
     })
     */
 
+    /*
     const user = new User()
     user.userName = 'virk'
     user.password = 'virk@adonisjs.com'
     await user.save()
+    */
   }
 }
