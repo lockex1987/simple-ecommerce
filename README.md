@@ -702,13 +702,15 @@ Fake Vue login, no backend
 
 AdonisJS Redis
 
+AdonisJS Controller, CORS, Vue call API, cookie, sso
+
 Redis token
 
 AdonisJS Middleware
 
 Vue Router Middleware
 
-
+Rate Limit
 
 
 

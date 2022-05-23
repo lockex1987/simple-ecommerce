@@ -98,17 +98,20 @@
 import { RouterLink } from 'vue-router'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
+import { deleteToken } from '@/helpers/sso'
+import axios from 'axios'
 
 const authStore = useAuthStore()
 
 const router = useRouter()
 
-const processLogout = () => {
+const processLogout = async () => {
+  await axios.post('/logout')
+  deleteToken()
   authStore.setUser({
     id: null,
     userName: '',
   })
-
   router.push({ name: 'login' })
 }
 </script>

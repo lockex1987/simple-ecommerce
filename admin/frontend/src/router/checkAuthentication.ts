@@ -1,10 +1,24 @@
 import { useAuthStore } from '@/stores/auth'
+import { getToken, deleteToken } from '@/helpers/sso'
+import axios from 'axios'
 
 export default async to => {
   const path = to.path
   const authStore = useAuthStore()
+  let { user } = authStore
+  const token = getToken()
 
-  if (!authStore.user.id) {
+  if (token && !user.id) {
+    const { data } = await axios.get('/me')
+    if (data.code == 0) {
+      user = data.user
+      authStore.setUser(user)
+    } else {
+      deleteToken()
+    }
+  }
+
+  if (!user.id) {
     const isLoginOnlyPage = path.startsWith('/backend')
     if (path == '/' || isLoginOnlyPage) {
       return { name: 'login' }
