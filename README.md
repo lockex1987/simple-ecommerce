@@ -704,7 +704,11 @@ AdonisJS Redis
 
 AdonisJS Controller, CORS, Vue call API, cookie, sso
 
+Check user_name, password
+
 Redis token
+
+
 
 AdonisJS Middleware
 

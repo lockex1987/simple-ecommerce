@@ -1,6 +1,11 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Hash from '@ioc:Adonis/Core/Hash'
 import User from 'App/Models/User'
+import {
+  saveUser,
+  getUser,
+  removeUser,
+} from 'App/Cache/Auth'
 
 export default class LoginController {
   public async login({ request }: HttpContextContract) {
@@ -22,32 +27,47 @@ export default class LoginController {
       }
     }
 
+    const redisUser = {
+      id: user.id,
+      userName: user.userName,
+    }
+    const token = saveUser(redisUser, request)
+
     return {
       code: 0,
-      user: {
-        id: user.id,
-        userName: user.userName,
-      },
-      token: 'xxx',
+      user: redisUser,
+      token,
     }
   }
 
   public async logout({ request }: HttpContextContract) {
-    const body = request.body()
-    console.log(body)
-    // return body
+    removeUser(request)
     return {
       code: 0,
+      message: 'Logout',
     }
   }
 
   public async me({ request }: HttpContextContract) {
+    const redisUser = await getUser(request)
+    if (!redisUser) {
+      return {
+        code: 1,
+        message: 'Not in Redis',
+      }
+    }
+
+    const user = await User.find(redisUser.id)
+    if (!user) {
+      return {
+        code: 1,
+        message: 'Not in DB',
+      }
+    }
+
     return {
       code: 0,
-      user: {
-        id: 1,
-        userName: 'lockex1987',
-      },
+      user: redisUser,
     }
   }
 }
