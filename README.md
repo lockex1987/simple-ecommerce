@@ -698,6 +698,10 @@ loginUser mixin (mapState)
 
 ### Authentication
 
+Fake Vue login, no backend
+
+AdonisJS Redis
+
 Redis token
 
 AdonisJS Middleware
