@@ -72,31 +72,25 @@ Step 5: Setup MariaDB database, seed by AdonisJS command
 
 Setup database with data of fake API
 
+Step 6: Admin frontend (SPA)
 
+Step 7: Authentication
 
+Redis token
 
+AdonisJS Middleware
 
-Step 2: SSR with Nuxt
+Vue Router Middleware
 
-Step 4:
+Step 8: Admin CRUD
 
-Admin backend
-
-Admin frontend (SPA)
-
-Features:
-
-Authentication
-
-Change password
-
-Category
+User
 
 Product
 
-Order
+Step 9: Shopping SSR with Nuxt
 
-Dashboard
+Step 10: Deploy
 
 Deploy PM2, Nginx
 
@@ -681,6 +675,24 @@ $ node ace serve --watch
 AdonisJS Lucid, MariaDB, Greet ACE command
 
 Database seeder: user, product
+
+### Admin frontend (SPA)
+
+Clone from shopping/frontend
+
+Login
+
+Change password
+
+Product
+
+Order
+
+Dashboard
+
+Nav
+
+loginUser mixin (mapState)
 
 
 
