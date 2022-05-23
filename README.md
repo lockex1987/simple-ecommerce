@@ -696,7 +696,13 @@ loginUser mixin (mapState)
 
 
 
+### Authentication
 
+Redis token
+
+AdonisJS Middleware
+
+Vue Router Middleware
 
 
 
