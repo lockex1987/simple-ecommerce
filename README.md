@@ -680,7 +680,7 @@ $ node ace serve --watch
 
 AdonisJS Lucid, MariaDB, Greet ACE command
 
-Database seeder
+Database seeder: user, product
 
 
 
