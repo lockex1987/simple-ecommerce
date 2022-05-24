@@ -96,6 +96,8 @@ status
 
 Step 14: Dashboard
 
+Step 15: Security checklist
+
 ### Get started
 
 #### Prerequisites
