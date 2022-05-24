@@ -28,12 +28,6 @@ Node.js, VSCode, Ubuntu
 
 Vue 3, Vue Router, Pinia, Vite, TypeScript, ESLint
 
-
-
-#### 
-
-
-
 Nuxt 3, Express (Shopping)
 
 AdonisJS (Admin backend)
@@ -42,19 +36,15 @@ SSR (Shopping), SPA (Admin)
 
 Bootstrap 5.2 (include bootstrap-extended)
 
-Highcharts, MariaDB, Redis
-
-
+MariaDB, Redis
 
 Nginx
 
-
+Highcharts
 
 #### Plan, steps
 
 GitHub branch each step
-
-
 
 Step 1: Get started
 
@@ -82,19 +72,29 @@ AdonisJS Middleware
 
 Vue Router Middleware
 
-Step 8: Admin CRUD
+Step 8: Change password
+
+Step 9: Admin CRUD
 
 User
 
 Product
 
-Step 9: Shopping SSR with Nuxt
+Upload image
 
-Step 10: Deploy
+Step 10: Shopping SSR with Nuxt
+
+Step 11: Deploy
 
 Deploy PM2, Nginx
 
+Step 12: Checkout
 
+Step 13: Order
+
+status
+
+Step 14: Dashboard
 
 ### Get started
 
@@ -109,8 +109,6 @@ Ubuntu (Linux)
 JS, CSS, HTML knowledge
 
 Git, GitHub
-
-
 
 #### Create new project
 
