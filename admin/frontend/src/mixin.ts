@@ -27,5 +27,16 @@ export default {
 
   methods: {
     toCurrency: (value: number) => formatter.format(value),
+
+    /**
+     * Hiển thị số có ngăn cách hàng nghìn.
+     * @param {Number} num Số
+     */
+    formatNumber(num: number | null) {
+      if (!num) {
+        return num
+      }
+      return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    },
   },
 }

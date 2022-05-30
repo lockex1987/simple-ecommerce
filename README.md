@@ -714,6 +714,26 @@ Vue Router Middleware
 
 TODO: Rate Limit
 
+### Change password
+
+Event type
+
+```
+Event
+  UIEvent
+    InputEvent
+    KeyboardEvent
+    MouseEvent
+```
+
+Third party libraries (TypeScript):
+
+- noti
+- CV
+- Pagi
+
+Libraries written by me.
+
 
 
 ### Facebook Messenger

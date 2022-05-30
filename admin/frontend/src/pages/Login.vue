@@ -72,12 +72,14 @@
   </div>
 </template>
 
+
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
 import { setToken } from '@/helpers/sso'
 import axios from 'axios'
+
 
 const authStore = useAuthStore()
 
@@ -89,6 +91,7 @@ const errorMessage = ref('')
 const showPassword = ref(false)
 const isProcessing = ref(false)
 const isCapsLockOn = ref(false)
+
 
 const processLogin = async () => {
   if (isProcessing.value) {
@@ -113,7 +116,7 @@ const processLogin = async () => {
   }
 }
 
-const handleCapsLockWarning = evt => {
+const handleCapsLockWarning = (evt: KeyboardEvent) => {
   // Thêm đoạn kiểm tra getModifierState vì khi focus thì bị lỗi
   if (evt.getModifierState) {
     isCapsLockOn.value = evt.getModifierState('CapsLock')
