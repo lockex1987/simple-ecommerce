@@ -1,8 +1,9 @@
 import { useAuthStore } from '@/stores/auth'
 import { getToken, deleteToken } from '@/helpers/sso'
 import axios from 'axios'
+import type { RouteLocationNormalized } from 'vue-router'
 
-export default async to => {
+export default async (to: RouteLocationNormalized) => {
   const path = to.path
   const authStore = useAuthStore()
   let { user } = authStore
