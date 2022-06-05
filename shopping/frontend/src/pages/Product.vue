@@ -56,6 +56,7 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useProductStore } from '@/stores/products'
 import type { Product } from '@/stores/products'
+import { toCurrency } from '@/composables/common'
 
 const productStore = useProductStore()
 const route = useRoute()

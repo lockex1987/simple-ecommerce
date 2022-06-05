@@ -41,6 +41,7 @@ import CartCard from '../components/CartCard.vue'
 import { computed } from 'vue'
 import { useCartStore } from '@/stores/cart'
 import { useProductStore } from '@/stores/products'
+import { toCurrency } from '@/composables/common'
 
 const cartStore = useCartStore()
 const productStore = useProductStore()

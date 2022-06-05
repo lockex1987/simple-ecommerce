@@ -34,6 +34,7 @@
 import { RouterLink } from 'vue-router'
 import IsInCart from './IsInCart.vue'
 import type { Product } from '@/stores/products'
+import { toCurrency } from '@/composables/common'
 
 defineProps<{
   product: Product

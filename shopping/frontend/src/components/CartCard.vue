@@ -50,6 +50,7 @@
 import { RouterLink } from 'vue-router'
 import { useCartStore } from '@/stores/cart'
 import type { CartPreview } from '@/stores/cart'
+import { toCurrency } from '@/composables/common'
 
 const cartStore = useCartStore()
 
