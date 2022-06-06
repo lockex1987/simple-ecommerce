@@ -28,11 +28,11 @@ Node.js, VSCode, Ubuntu
 
 Vue 3, Vue Router, Pinia, Vite, TypeScript, ESLint
 
-Nuxt 3, Express (Shopping)
+AdonisJS MPA (Shopping backend)
 
-AdonisJS (Admin backend)
+AdonisJS API (Admin backend)
 
-SSR (Shopping), SPA (Admin)
+MPA (Shopping), SPA (Admin)
 
 Bootstrap 5.2 (include bootstrap-extended)
 
@@ -82,7 +82,7 @@ Product
 
 Upload image
 
-Step 10: Shopping SSR with Nuxt
+Step 10: AdonisJS Edge template
 
 Step 11: Deploy
 
