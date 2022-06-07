@@ -1,9 +1,7 @@
-// Then import Bootstrap
-@import "bootstrap/scss/bootstrap";
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import 'bootstrap/scss/bootstrap';
 
-.cursor-pointer {
-  cursor: pointer;
-}
 
-@import 'noti';
-@import 'common-validation';
+@import 'utils/cursor';
+@import 'utils/form';
+@import 'utils/tables';

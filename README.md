@@ -748,6 +748,14 @@ Use third-party libraries for more support, documentation. Limit use home-made l
 
 ### Admin CRUD
 
+Adonis pagination
+
+Element Plus pagination
+
+Add CSS, JS libraries by npm. No CDN, static files.
+
+Debounce function TypeScript
+
 User
 
 Product

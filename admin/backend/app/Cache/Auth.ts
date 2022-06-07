@@ -4,7 +4,7 @@ import { RequestContract } from '@ioc:Adonis/Core/Request'
 import { v4 as uuid } from 'uuid'
 
 // Redis info
-type User = {
+export type RedisUser = {
   id: number
   userName: string
 }
@@ -55,7 +55,7 @@ const removeUser = (request: RequestContract) => {
 /**
  * Lấy thông tin người dùng hiện tại (đang được lưu ở Redis).
  */
-const getUser = async (request: RequestContract): Promise<User|null> => {
+const getUser = async (request: RequestContract): Promise<RedisUser|null> => {
   const redisKey = getRedisKeyFromRequest(request)
   const redisValue = await Redis.get(redisKey)
   const user = !redisValue ? null : JSON.parse(redisValue)
@@ -66,7 +66,7 @@ const getUser = async (request: RequestContract): Promise<User|null> => {
  * Lưu thông tin người dùng vào Redis (id, userName).
  * Sử dụng sau khi đăng nhập thành công.
  */
-const saveUser = (user: User, request: RequestContract): string => {
+const saveUser = (user: RedisUser, request: RequestContract): string => {
   const token = generateRandomToken()
 
   // Sinh code và lưu ở Redis trong 10 ngày

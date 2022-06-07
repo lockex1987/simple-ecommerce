@@ -26,3 +26,7 @@ Route.post('/login', 'LoginController.login')
 Route.post('/logout', 'LoginController.logout')
 Route.get('/me', 'LoginController.me')
 Route.post('/change-password', 'ChangePasswordController.changePassword')
+
+Route.group(() => {
+  Route.post('/search', 'UserController.search')
+}).prefix('/user')

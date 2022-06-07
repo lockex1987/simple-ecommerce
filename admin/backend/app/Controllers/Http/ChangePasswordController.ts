@@ -1,14 +1,14 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Hash from '@ioc:Adonis/Core/Hash'
 import User from 'App/Models/User'
-import { getUser } from 'App/Cache/Auth'
+import { getUser, type RedisUser } from 'App/Cache/Auth'
 
 export default class ChangePasswordController {
   public async changePassword({ request }: HttpContextContract) {
     // TODO: Validate
     const { oldPassword, newPassword } = request.body()
 
-    const redisUser = await getUser(request)
+    const redisUser = await getUser(request) as RedisUser
     const user = await User.find(redisUser.id)
 
     if (!user) {
