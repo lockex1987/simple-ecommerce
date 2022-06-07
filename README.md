@@ -74,6 +74,12 @@ Vue Router Middleware
 
 Step 8: Change password
 
+Step 9: UI component library
+
+Element Plus
+
+
+
 Step 9: Admin CRUD
 
 User
@@ -93,6 +99,8 @@ Step 12: Checkout
 Step 13: Order
 
 status
+
+Step 10: Validate (Vue, AdonisJS)
 
 Step 14: Dashboard
 
@@ -733,6 +741,14 @@ Third party libraries (TypeScript):
 - Pagi
 
 Libraries written by me.
+
+### UI component library
+
+[Element Plus](https://element-plus.org/en-US/)
+
+Use third-party libraries for more support, documentation. Limit use home-made libraries.
+
+
 
 
 
