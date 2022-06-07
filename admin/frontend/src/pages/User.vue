@@ -9,7 +9,7 @@
       placeholder="Name"
       class="form-control form-control-inline-width mb-3"
       v-model.trim="searchText"
-      @change="search(1)"
+      @input="debouncedSearch()"
     />
   </div>
 
@@ -81,6 +81,7 @@
 import { ElPagination } from 'element-plus'
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
+import { debounce } from '@/composables/common'
 
 const limit = 10
 const total = ref(-1)
@@ -96,9 +97,11 @@ const search = async (page: number) => {
   }
   const { data } = await axios.post('/user/search', params)
   total.value = data.meta.total
-  currentPage.value = data.meta.current_page
+  currentPage.value = data.meta.current_page ?? page
   userList.value = data.data
 }
+
+const debouncedSearch = debounce(() => search(1), 500)
 
 onMounted(() => {
   search(1)
