@@ -78,9 +78,7 @@ Step 9: UI component library
 
 Element Plus
 
-
-
-Step 9: Admin CRUD
+Step 10: Admin CRUD
 
 User
 
@@ -748,9 +746,13 @@ Libraries written by me.
 
 Use third-party libraries for more support, documentation. Limit use home-made libraries.
 
+### Admin CRUD
 
+User
 
+Product
 
+Upload image
 
 ### Facebook Messenger
 
