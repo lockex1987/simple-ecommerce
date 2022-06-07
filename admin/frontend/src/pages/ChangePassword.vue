@@ -95,8 +95,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import axios from 'axios'
-import noti from '@/helpers/noti'
-import CV from '@/helpers/common-validation'
+import { ElNotification } from 'element-plus'
 
 // Mật khẩu cũ
 const oldPassword = ref('')
@@ -148,9 +147,11 @@ const changePassword = async () => {
     return
   }
 
+  /*
   if (CV.invalidForm(root.value)) {
     return
   }
+  */
 
   isProcessing.value = true
   const params = {
@@ -162,9 +163,15 @@ const changePassword = async () => {
 
   if (data.code == 0) {
     cancelForm()
-    noti.success('Đổi mật khẩu thành công')
+    ElNotification({
+      type: 'success',
+      message: 'Đổi mật khẩu thành công',
+    })
   } else if (data.code == 1) {
-    noti.error(data.message)
+    ElNotification({
+      type: 'error',
+      message: data.message,
+    })
   }
 }
 

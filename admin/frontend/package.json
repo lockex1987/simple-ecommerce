@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "check-build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "preview": "vite preview --port 5050",
     "typecheck": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
@@ -12,6 +13,7 @@
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0-beta1",
     "bootstrap-icons": "^1.8.2",
+    "element-plus": "^2.2.4",
     "pinia": "^2.0.13",
     "vue": "^3.2.33",
     "vue-router": "^4.0.14"

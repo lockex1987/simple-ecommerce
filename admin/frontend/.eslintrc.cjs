@@ -30,5 +30,6 @@ module.exports = {
     'object-curly-spacing': ['error','always'],
     'vue/multi-word-component-names': 'off',
     'vue/require-v-for-key': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
 }

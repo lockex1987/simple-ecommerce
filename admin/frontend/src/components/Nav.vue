@@ -66,7 +66,7 @@
             type="button"
             data-bs-toggle="dropdown"
           >
-            {{ loginUser.userName }}
+            {{ authStore.user.userName }}
           </button>
           <ul class="dropdown-menu dropdown-menu-end">
             <li>

@@ -1,14 +1,18 @@
-import axios from 'axios'
+import axios, { type AxiosRequestConfig } from 'axios'
 import { getToken, deleteToken } from '@/helpers/sso'
+import { ElNotification } from 'element-plus'
 
 const ROOT_API = 'http://127.0.0.1:3333'
 axios.defaults.baseURL = ROOT_API
 
 // Request interceptor
-axios.interceptors.request.use(request => {
+axios.interceptors.request.use((request: AxiosRequestConfig): AxiosRequestConfig => {
   const token = getToken()
   if (token) {
-    request.headers.common.Authorization = `Bearer ${token}`
+    if (!request.headers) {
+      request.headers = {}
+    }
+    request.headers.Authorization = token
   }
   return request
 })
@@ -23,11 +27,17 @@ axios.interceptors.response.use(
     const { status } = error.response
 
     if (status >= 500) {
-      window.noti.error('Đã có lỗi xảy ra')
+      ElNotification({
+        type: 'error',
+        message: 'Đã có lỗi xảy ra',
+      })
     }
 
     if (status == 403) {
-      window.noti.error('Bạn không có quyền thực hiện chức năng này')
+      ElNotification({
+        type: 'error',
+        message: 'Bạn không có quyền thực hiện chức năng này',
+      })
     }
 
     // https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
@@ -39,7 +49,7 @@ axios.interceptors.response.use(
       deleteToken()
 
       // Về trang chủ
-      window.location = '/'
+      window.location.href = '/'
     }
 
     // Xử lý lỗi validate do Laravel trả về
@@ -48,16 +58,19 @@ axios.interceptors.response.use(
       let message = ''
       for (const key in errors) {
         if (Object.prototype.hasOwnProperty.call(errors, key)) {
-          const arr = errors[key]
+          const arr = errors[key] as string[]
           arr.forEach(s => {
             message += s + '\n'
           })
         }
       }
-      window.noti.error(message.trim())
+      ElNotification({
+        type: 'error',
+        message: message.trim(),
+      })
     }
 
-    // return Promise.reject(error);
+    // return Promise.reject(error)
     return Promise.resolve({
       data: {
         code: status,
