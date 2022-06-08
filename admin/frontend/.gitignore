@@ -1,4 +1,4 @@
 node_modules
 dist
 package-lock.json
-public/js/env.js
+public/js/.env.js
