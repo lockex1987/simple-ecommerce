@@ -91,7 +91,7 @@ type User = {
 const limit = 10
 const total = ref(-1)
 const currentPage = ref(1)
-const userList = ref([] as User[])
+const userList = ref([] as any[]) // as User[]
 const searchText = ref('')
 
 const search = async (page: number) => {
