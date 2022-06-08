@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/images/favicon.ico" />
   <title>Simple eCommerce</title>
-
   <!-- Vite will ignore this file -->
-  <!-- Only compile module? -->
+  <!-- Only compile module? No. Add type="module" not enabled. -->
+  <!-- Only compile /src/main.ts? File in /src folder? /src/main.ts and /src/index.ts are both enabled -->
+  <!-- If we includes both /src/env.js and /src/main.ts then two files are bundled into one file -->
+  <!-- Process files in /src folder -->
+  <!-- Append to head tag -->
   <script src="/js/env.js"></script>
 </head>
 
