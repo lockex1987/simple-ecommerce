@@ -2,8 +2,9 @@ import axios, { type AxiosRequestConfig } from 'axios'
 import { getToken, deleteToken } from '@/helpers/sso'
 import { ElNotification } from 'element-plus'
 
-const ROOT_API = 'http://127.0.0.1:3333'
-axios.defaults.baseURL = ROOT_API
+// window.ROOT_API is defined in js/env.js
+// Define type in src/types/index.d.ts
+axios.defaults.baseURL = window.ROOT_API
 
 // Request interceptor
 axios.interceptors.request.use((request: AxiosRequestConfig): AxiosRequestConfig => {

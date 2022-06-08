@@ -83,10 +83,15 @@ import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import { debounce } from '@/composables/common'
 
+type User = {
+  id: number
+  user_name: string
+}
+
 const limit = 10
 const total = ref(-1)
 const currentPage = ref(1)
-const userList = ref(null)
+const userList = ref([] as User[])
 const searchText = ref('')
 
 const search = async (page: number) => {
