@@ -13,7 +13,7 @@ export default async (to: RouteLocationNormalized) => {
     const { data } = await axios.get('/me')
     if (data.code == 0) {
       user = data.user
-      authStore.setUser(user)
+      authStore.user = user
     } else {
       deleteToken()
     }
@@ -22,6 +22,7 @@ export default async (to: RouteLocationNormalized) => {
   if (!user.id) {
     const isLoginOnlyPage = path.startsWith('/backend')
     if (path == '/' || isLoginOnlyPage) {
+      authStore.beforeLoginPath = to.fullPath
       return { name: 'login' }
     }
   } else {

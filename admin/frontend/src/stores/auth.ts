@@ -7,6 +7,7 @@ interface User {
 
 interface AuthState {
   user: User
+  beforeLoginPath: string
 }
 
 export const useAuthStore = defineStore({
@@ -17,11 +18,6 @@ export const useAuthStore = defineStore({
       id: null,
       userName: '',
     },
+    beforeLoginPath: '',
   }),
-
-  actions: {
-    setUser(user: User) {
-      this.user = user
-    },
-  },
 })

@@ -30,6 +30,8 @@ export default class CheckLogin {
       return
     }
 
+    // TODO: Tăng TTL của token, dựa vào trường expiredTime trong Redis
+
     await next()
   }
 }

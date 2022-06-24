@@ -70,13 +70,13 @@ const saveUser = (user: RedisUser, request: RequestContract): string => {
   const token = generateRandomToken()
 
   // Sinh code và lưu ở Redis trong 10 ngày
-  // TODO: Use moment, set end of day
+  // TODO: Use moment (Luxor), set end of day
   const expiredTime = 10 * 24 * 60 * 60
   const redisKey = getRedisKeyFromToken(token, request)
   const redisValue = JSON.stringify({
     id: user.id,
     userName: user.userName,
-    expiredTime: expiredTime,
+    expiredTime,
   })
   Redis.set(redisKey, redisValue, 'EX', expiredTime)
 

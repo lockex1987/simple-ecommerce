@@ -109,8 +109,10 @@ const processLogin = async () => {
   if (data.code == 0) {
     errorMessage.value = ''
     setToken(data.token)
-    authStore.setUser(data.user)
-    router.push({ name: 'dashboard' })
+    authStore.user = data.user
+    const defaultPagePath = '/backend/dashboard'
+    router.push(authStore.beforeLoginPath || defaultPagePath)
+    authStore.beforeLoginPath = ''
   } else if (data.code == 1) {
     errorMessage.value = data.message
   }

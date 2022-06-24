@@ -108,10 +108,10 @@ const router = useRouter()
 const processLogout = async () => {
   await axios.post('/logout')
   deleteToken()
-  authStore.setUser({
+  authStore.user = {
     id: null,
     userName: '',
-  })
-  router.push({ name: 'login' })
+  }
+  router.push('/login')
 }
 </script>
